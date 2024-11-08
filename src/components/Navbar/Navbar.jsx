@@ -5,13 +5,19 @@ import search from "../../assets/search.png";
 import upload from "../../assets/upload.png";
 import more from "../../assets/more.png";
 import notification from "../../assets/notification.png";
-import jack from '../../assets/jack.png'
+import jack from "../../assets/jack.png";
+import { PropTypes } from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ setSidebar }) => {
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
-        <img src={menu} alt="menu icon" className="menu-icon" />
+        <img
+          src={menu}
+          alt="menu icon"
+          className="menu-icon"
+          onClick={() => setSidebar(prev => prev === false ? true : false)}
+          />
         <img src={logo} alt="logo img" className="logo" />
       </div>
 
@@ -33,3 +39,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+Navbar.propTypes = {
+  setSidebar: PropTypes.func
+}
