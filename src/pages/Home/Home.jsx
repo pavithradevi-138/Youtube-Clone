@@ -1,11 +1,15 @@
 import { PropTypes } from 'prop-types'
 import './Home.css'
 import Sidebar from '../../components/Sidebar/Sidebar'
+import Feed from '../../components/Feed/Feed'
 
 const Home = ({ sidebar }) => {
   return (
     <>
-    <Sidebar sidebar={sidebar} />
+      <Sidebar sidebar={sidebar} />
+      <div className={`container ${sidebar ? "" : "large-container"}`}>
+        <Feed />
+      </div>
     </>
   )
 }
