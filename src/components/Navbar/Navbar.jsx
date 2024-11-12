@@ -7,6 +7,7 @@ import more from "../../assets/more.png";
 import notification from "../../assets/notification.png";
 import jack from "../../assets/jack.png";
 import { PropTypes } from 'prop-types';
+import { Link } from "react-router-dom";
 
 const Navbar = ({ setSidebar }) => {
   return (
@@ -18,7 +19,7 @@ const Navbar = ({ setSidebar }) => {
           className="menu-icon"
           onClick={() => setSidebar(prev => prev === false ? true : false)}
           />
-        <img src={logo} alt="logo img" className="logo" />
+        <Link to='/' ><img src={logo} alt="logo img" className="logo" /></Link>
       </div>
 
       <div className="nav-middle flex-div">
